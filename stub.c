@@ -7,7 +7,7 @@
  
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
+
 
 #define MEMSIZE 10000
 
@@ -30,10 +30,12 @@ void loadM (char *imgFileName) {
 		++i;
 	}
 	fclose(fp);
+
 }
 
 void dumpM () {
-	for (int i=0;i<MEMSIZE;i++) {
+	int i;
+	for (i=0;i<MEMSIZE;i++) {
 		printf ("(%d,%d)\t", i, M[i]);
 	}
 }
@@ -124,10 +126,10 @@ void executeInstruction(int instruction, int adress){
 		/* code */
 		break;
 	case 61:
-		/* code */
+		acumulator = acumulator/10;
 		break;
 	case 62:
-		/* code */
+		acumulator = acumulator*10;
 		break;
 	case 70:
 		//exit(0);
@@ -141,9 +143,11 @@ void executeInstruction(int instruction, int adress){
 }
 
 int getParameters (int code, int* adress){
+
 	int instruct = code/100;
 	*adress = code%100;
 	return instruct;
+
 }
 
 void executa () {
@@ -154,6 +158,7 @@ void executa () {
 	int instruction= -1;
 	
 	while (instruction!=70){
+
 		instruction = getParameters(M[instructionPointer], &adress);
 		instructionPointer++;
 		executeInstruction(instruction, adress);
@@ -164,7 +169,7 @@ void executa () {
 }
 
 void main (int argc, char *argv[]) {
-	M[30] = 0;
+
 	puts ("Hello");
 	//if (argc>1) {
 		/* Um computador frequentemente tem um programa que carrega um 
@@ -174,8 +179,8 @@ void main (int argc, char *argv[]) {
 		 * um programa na memória, neste simulador, é algo feito "por fora"
 		 * da simulação.
 		 * */
-		loadM("teste.hipo");
-		//loadM(argv[1]);
+		//loadM("teste.hipo");
+		loadM(argv[1]);
 		//printf(argv[1]);
 		//dumpM();
 		executa();
