@@ -180,6 +180,12 @@ void main (int argc, char *argv[]) {
 		 * da simulação.
 		 * */
 		//loadM("teste.hipo");
+
+		int i;
+		for (i = 0 ; i<10000 ; i++){
+			M[i] = 0;
+		}
+		
 		loadM(argv[1]);
 		//printf(argv[1]);
 		//dumpM();
