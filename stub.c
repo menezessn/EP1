@@ -126,13 +126,13 @@ void executeInstruction(int instruction, int adress){
 		/* code */
 		break;
 	case 61:
-		acumulator = acumulator/10;
-		break;
-	case 62:
 		acumulator = acumulator*10;
 		break;
+	case 62:
+		acumulator = acumulator/10;
+		break;
 	case 70:
-		//exit(0);
+		exit(0);
 		break;
 	
 	
