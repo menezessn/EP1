@@ -9,7 +9,7 @@
 #include <stdlib.h>
 
 
-#define MEMSIZE 10000
+#define MEMSIZE 100
 
 int M[MEMSIZE];  // representa a memória do HIPO.
 
@@ -182,7 +182,7 @@ void main (int argc, char *argv[]) {
 		//loadM("teste.hipo");
 
 		int i;
-		for (i = 0 ; i<10000 ; i++){
+		for (i = 0 ; i<MEMSIZE ; i++){
 			M[i] = 0;
 		}
 		
