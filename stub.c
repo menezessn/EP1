@@ -188,7 +188,7 @@ void main (int argc, char *argv[]) {
 		
 		loadM(argv[1]);
 		//printf(argv[1]);
-		//dumpM();
+		dumpM();
 		executa();
 	//}
 }
